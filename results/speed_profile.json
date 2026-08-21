@@ -1,0 +1,38 @@
+{
+  "rows": [
+    {
+      "model": "qwen2.5-coder:3b",
+      "weights_gb": 1.9,
+      "n_samples": 130,
+      "mean_gen_seconds": 8.5,
+      "mean_out_tok": 154.0,
+      "mean_prompt_tok": 424.8,
+      "gen_tok_per_s": 18.18,
+      "samples_per_hour": 424.9,
+      "relative_speed": 1.0
+    },
+    {
+      "model": "qwen2.5-coder:3b-instruct-q8_0",
+      "weights_gb": 3.3,
+      "n_samples": 130,
+      "mean_gen_seconds": 16.0,
+      "mean_out_tok": 159.6,
+      "mean_prompt_tok": 424.8,
+      "gen_tok_per_s": 9.99,
+      "samples_per_hour": 225.4,
+      "relative_speed": 0.55
+    },
+    {
+      "model": "qwen2.5-coder:3b-instruct-fp16",
+      "weights_gb": 6.2,
+      "n_samples": 3,
+      "mean_gen_seconds": 33.4,
+      "mean_out_tok": 38.0,
+      "mean_prompt_tok": 262.0,
+      "gen_tok_per_s": 1.14,
+      "samples_per_hour": 107.9,
+      "relative_speed": 0.063
+    }
+  ],
+  "note": "gen_tok_per_s 為含 prefill 的聚合吞吐"
+}

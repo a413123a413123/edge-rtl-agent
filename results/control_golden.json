@@ -1,8 +1,10 @@
 {
-  "generated_at": "2026-08-21T13:20:32.243964+00:00",
+  "generated_at": "2026-08-21T15:25:56.506196+00:00",
   "task": "spec-to-rtl",
   "n_problems": 20,
   "n_pass": 20,
+  "n_skipped_missing": 0,
+  "skipped": [],
   "pass_at_1": 1.0,
   "code_string": "....................",
   "per_problem": {

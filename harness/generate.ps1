@@ -1,4 +1,4 @@
-# =========================================================================
+﻿# =========================================================================
 # generate.ps1 — VerilogEval v2 spec-to-rtl 生成器(Windows 側)
 # =========================================================================
 # 為什麼在 Windows 跑:WSL2 NAT 模式下 Ollama(綁 127.0.0.1)無法從 WSL 直達,
@@ -21,6 +21,8 @@ param(
     [double]$Temperature = 0.0,
     [double]$TopP        = 0.95,
     [int]   $MaxTokens   = 1024,
+    [int]   $NumCtx      = 8192,
+    [int]   $Seed        = 42,
     [string]$Tag         = "run",
     [string]$WslUser     = "a413123a413123",
     [string]$OllamaUrl   = "http://localhost:11434"
@@ -74,6 +76,8 @@ foreach ($p in $problems) {
             temperature = $Temperature
             top_p       = $TopP
             num_predict = $MaxTokens
+            num_ctx     = $NumCtx
+            seed        = $Seed
         }
     } | ConvertTo-Json -Depth 6
 
@@ -83,6 +87,7 @@ foreach ($p in $problems) {
     $content = $resp.message.content
 
     # --- 官方式代碼擷取:逐行掃 [BEGIN]/[DONE] ---
+    # 稽核輪一 V1 修正:與官方一致,兩標記齊全才採用(截斷回應走 fallback)
     $codeLines = New-Object System.Collections.Generic.List[string]
     $started = $false; $ended = $false
     foreach ($line in ($content -split "`r?`n")) {
@@ -98,7 +103,8 @@ foreach ($p in $problems) {
             } else { $codeLines.Add($line) }
         }
     }
-    # 後備:模型沒用 [BEGIN]/[DONE] 時退而擷取 ``` 圍欄(記錄 fallback 供分析)
+    if (-not ($started -and $ended)) { $codeLines.Clear() }
+    # 後備:標記不齊時退而擷取 ``` 圍欄(記錄 fallback 供分析)
     $usedFallback = $false
     if ($codeLines.Count -eq 0) {
         $usedFallback = $true
@@ -136,6 +142,8 @@ $runInfo = [ordered]@{
     temperature = $Temperature
     top_p       = $TopP
     max_tokens  = $MaxTokens
+    num_ctx     = $NumCtx
+    seed        = $Seed
     n_samples   = 1
     note        = "single-sample pass@1 (temp 0); official uses n=20 samples at temp 0.8 for pass@k"
     problems    = $runMeta

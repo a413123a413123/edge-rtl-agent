@@ -1,0 +1,33 @@
+Question:
+
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - output zero
+
+The module should always outputs a LOW.
+
+
+
+Icarus Verilog reported the following problems with your previous attempt:
+sample.sv:6: error: 'zero' is not a valid l-value for a procedural assignment.
+sample.sv:2:      : 'zero' is declared here as a wire.
+1 error(s) during elaboration.
+
+Your previous attempt (INCORRECT - do not repeat it verbatim):
+```
+module TopModule (
+    output zero
+);
+
+always @(*) begin
+    zero = 1'b0;
+end
+
+endmodule
+```
+
+Rewrite the complete corrected module TopModule so it fixes these problems.
+Enclose your code with [BEGIN] and [DONE]. Only output the code snippet
+and do NOT output anything else.

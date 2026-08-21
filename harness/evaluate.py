@@ -27,8 +27,14 @@ from datetime import datetime, timezone
 MISMATCH_RE = re.compile(r"^Mismatches: (\d+) in \d+ samples$", re.M)
 
 
-def classify(log_text):
-    """照官方 sv-iv-analyze 的順序與字串規則分類單一結果。"""
+def classify(log_text, sample_path=None):
+    """照官方 sv-iv-analyze 的順序與字串規則分類單一結果。
+
+    與官方的已知差異(2026-08-21 稽核輪一 V1 修正後):
+    - 尾端優先序已對齊官方:T → p → C → no_mismatch('.') → 原始碼掃描('r'/'R')
+    - 'w' 模式同時接受官方字串 "as wire" 與容器版 iverilog s20250103 的 "as a wire"
+    - 官方永不輸出 '?';本實作同樣以 'R' 收斂(需 sample_path 供 'r' 掃描)
+    """
     error_c = False
     error_p = False
     timeout = False
@@ -44,7 +50,6 @@ def classify(log_text):
         if ("warning: always_comb process has no sensitivities" in line
                 or "found no sensitivities so it will never trigger" in line):
             return "n", None
-        # 官方模式為 "as wire";新版 iverilog(s20250103)印 "as a wire",兩者皆收
         if "is declared here as wire" in line or "is declared here as a wire" in line:
             return "w", None
         if "Unknown module type" in line:
@@ -61,15 +66,26 @@ def classify(log_text):
         if match:
             mismatches = int(match.group(1))
 
+    # 尾端判定:官方優先序(p/C 先於通過與行為錯)
     if timeout:
         return "T", mismatches
-    if mismatches is not None:
-        return (".", 0) if mismatches == 0 else ("R", mismatches)
     if error_p:
         return "p", None
     if error_c:
         return "C", None
-    return "?", None
+    if mismatches == 0:
+        return ".", 0
+    # 官方在此掃描 sample 原始碼:reset 極性型 runtime 錯誤獨立為 'r'
+    if sample_path:
+        try:
+            with open(sample_path) as f:
+                src = f.read()
+        except OSError:
+            src = ""
+        if ("posedge reset" in src or "negedge reset" in src
+                or "posedge r)" in src):
+            return "r", mismatches
+    return "R", mismatches
 
 
 def run_one(sample_sv, test_sv, ref_sv):
@@ -112,6 +128,7 @@ def main():
 
     results = {}
     code_string = ""
+    skipped = []
     prob_dirs = sorted(
         d for d in os.listdir(args.completions)
         if os.path.isdir(os.path.join(args.completions, d))
@@ -121,9 +138,14 @@ def main():
         test = os.path.join(args.dataset, prob + "_test.sv")
         ref = os.path.join(args.dataset, prob + "_ref.sv")
         if not (os.path.exists(sample) and os.path.exists(test) and os.path.exists(ref)):
+            # 缺檔不再靜默消失於分母(稽核輪一 V1 發現):記為 '!' 並計入 skipped
+            results[prob] = {"code": "!", "mismatches": None}
+            code_string += "!"
+            skipped.append(prob)
+            print(f"{prob:40s} !  (缺檔,計為失敗)", flush=True)
             continue
         log = run_one(sample, test, ref)
-        code, mism = classify(log)
+        code, mism = classify(log, sample_path=sample)
         results[prob] = {"code": code, "mismatches": mism}
         code_string += code
         print(f"{prob:40s} {code}" + (f"  (mismatches={mism})" if mism else ""), flush=True)
@@ -135,6 +157,8 @@ def main():
         "task": "spec-to-rtl",
         "n_problems": n,
         "n_pass": npass,
+        "n_skipped_missing": len(skipped),
+        "skipped": skipped,
         "pass_at_1": round(npass / n, 4) if n else 0.0,
         "code_string": code_string,
         "per_problem": results,

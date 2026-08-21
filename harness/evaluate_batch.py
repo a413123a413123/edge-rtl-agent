@@ -77,7 +77,8 @@ def main():
         )
     meta_path = os.path.join(args.completions, "metadata.jsonl")
     if os.path.exists(meta_path):
-        with open(meta_path) as f:
+        # utf-8-sig:PowerShell 5.1 的 Add-Content -Encoding UTF8 會在首行寫入 BOM
+        with open(meta_path, encoding="utf-8-sig") as f:
             metas = [json.loads(l) for l in f if l.strip()]
         if metas:
             summary["generation"] = {

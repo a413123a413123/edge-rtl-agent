@@ -1,0 +1,47 @@
+{
+    "model":  "qwen2.5-coder:7b",
+    "task":  "spec-to-rtl",
+    "shots":  0,
+    "temperature":  0,
+    "top_p":  0.95,
+    "max_tokens":  1024,
+    "n_samples":  1,
+    "note":  "single-sample pass@1 (temp 0); official uses n=20 samples at temp 0.8 for pass@k",
+    "problems":  [
+                     {
+                         "problem":  "Prob006_vectorr",
+                         "gen_seconds":  7,
+                         "prompt_eval_count":  122,
+                         "eval_count":  71,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob007_wire",
+                         "gen_seconds":  1.6,
+                         "prompt_eval_count":  102,
+                         "eval_count":  29,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob008_m2014_q4h",
+                         "gen_seconds":  1.3,
+                         "prompt_eval_count":  113,
+                         "eval_count":  29,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob009_popcount3",
+                         "gen_seconds":  2.5,
+                         "prompt_eval_count":  125,
+                         "eval_count":  52,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob010_mt2015_q4a",
+                         "gen_seconds":  1.9,
+                         "prompt_eval_count":  116,
+                         "eval_count":  39,
+                         "marker_fallback":  false
+                     }
+                 ]
+}

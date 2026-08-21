@@ -44,7 +44,8 @@ def classify(log_text):
         if ("warning: always_comb process has no sensitivities" in line
                 or "found no sensitivities so it will never trigger" in line):
             return "n", None
-        if "is declared here as wire" in line:
+        # 官方模式為 "as wire";新版 iverilog(s20250103)印 "as a wire",兩者皆收
+        if "is declared here as wire" in line or "is declared here as a wire" in line:
             return "w", None
         if "Unknown module type" in line:
             return "m", None

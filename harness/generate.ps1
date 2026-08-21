@@ -16,6 +16,7 @@
 param(
     [string]$Model       = "qwen2.5-coder:3b",
     [int]   $NumProblems = 20,
+    [int]   $SkipProblems = 0,
     [int]   $Shots       = 0,
     [double]$Temperature = 0.0,
     [double]$TopP        = 0.95,
@@ -45,7 +46,7 @@ if ($Shots -gt 0) {
 
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 
-$problems = Get-ChildItem $datasetDir -Filter *_prompt.txt | Sort-Object Name | Select-Object -First $NumProblems
+$problems = Get-ChildItem $datasetDir -Filter *_prompt.txt | Sort-Object Name | Select-Object -Skip $SkipProblems -First $NumProblems
 Write-Host ("模型 {0} | 題數 {1} | {2}-shot | temp {3}" -f $Model, $problems.Count, $Shots, $Temperature)
 
 $runMeta = @()

@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-08-21T16:09:39.283858+00:00",
+  "arms": {
+    "repair_3b_1shot_v2": {
+      "mode": "full",
+      "model": "qwen2.5-coder:3b",
+      "shots": 1,
+      "seed": 42,
+      "n_problems": 20,
+      "attempt0_pass": 16,
+      "final_pass": 17,
+      "loop_net_gain": 1,
+      "fixed_at_attempt": {
+        "2": 1
+      },
+      "transitions": {
+        "C->.": 1,
+        "R->R": 3
+      },
+      "total_tokens": 12686,
+      "total_gen_seconds": 494.6,
+      "marker_fallback_count": 2
+    },
+    "repair_3b_1shot_codeonly": {
+      "mode": "code_only",
+      "model": "qwen2.5-coder:3b",
+      "shots": 1,
+      "seed": 42,
+      "n_problems": 20,
+      "attempt0_pass": 16,
+      "final_pass": 16,
+      "loop_net_gain": 0,
+      "fixed_at_attempt": {},
+      "transitions": {
+        "C->C": 1,
+        "R->R": 3
+      },
+      "total_tokens": 12670,
+      "total_gen_seconds": 566.4,
+      "marker_fallback_count": 3
+    },
+    "repair_3b_1shot_resample": {
+      "mode": "resample",
+      "model": "qwen2.5-coder:3b",
+      "shots": 1,
+      "seed": 42,
+      "n_problems": 20,
+      "attempt0_pass": 16,
+      "final_pass": 16,
+      "loop_net_gain": 0,
+      "fixed_at_attempt": {},
+      "transitions": {
+        "C->S": 1,
+        "R->R": 2,
+        "R->S": 1
+      },
+      "total_tokens": 10943,
+      "total_gen_seconds": 603.8,
+      "marker_fallback_count": 3
+    },
+    "repair_7b_1shot_v2": {
+      "mode": "full",
+      "model": "qwen2.5-coder:7b",
+      "shots": 1,
+      "seed": 42,
+      "n_problems": 10,
+      "attempt0_pass": 9,
+      "final_pass": 9,
+      "loop_net_gain": 0,
+      "fixed_at_attempt": {},
+      "transitions": {
+        "R->S": 1
+      },
+      "total_tokens": 4241,
+      "total_gen_seconds": 515.7,
+      "marker_fallback_count": 3
+    }
+  }
+}

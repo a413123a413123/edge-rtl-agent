@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-08-21T16:09:40.212624+00:00",
+  "task": "spec-to-rtl",
+  "n_problems": 20,
+  "n_pass": 17,
+  "n_skipped_missing": 0,
+  "skipped": [],
+  "pass_at_1": 0.85,
+  "code_string": ".....R.....R......R.",
+  "per_problem": {
+    "Prob001_zero": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob002_m2014_q4i": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob003_step_one": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob004_vector2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob005_notgate": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob006_vectorr": {
+      "code": "R",
+      "mismatches": 203
+    },
+    "Prob007_wire": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob008_m2014_q4h": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob009_popcount3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob010_mt2015_q4a": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob011_norgate": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob012_xnorgate": {
+      "code": "R",
+      "mismatches": 219
+    },
+    "Prob013_m2014_q4e": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob014_andgate": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob015_vector1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob016_m2014_q4j": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob017_mux2to1v": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob018_mux256to1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob019_m2014_q4f": {
+      "code": "R",
+      "mismatches": 49
+    },
+    "Prob020_mt2015_eq2": {
+      "code": ".",
+      "mismatches": 0
+    }
+  }
+}

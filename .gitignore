@@ -1,0 +1,15 @@
+# LibreLane / EDA 產物(體積大且可由 config 重現;metrics 與最終報告另行選擇性入庫)
+runs/
+*.vvp
+tb_bin
+a.out
+flow_raw.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 雜項
+.DS_Store
+Thumbs.db

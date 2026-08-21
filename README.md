@@ -51,6 +51,7 @@ ollama pull qwen2.5-coder:7b
 2. **非互動 shell 跑 `librelane --dockerized` 會因 TTY 掛掉**,且 exit code 可能被管線洗成 0。解法:`script -qec '...' /dev/null` 包偽終端,並以輸出中的 `Flow complete.` / `Smoke test passed.` 字樣為準,永遠不要只信 exit code。
 3. **Ubuntu 26.04 的 venv 需另裝 `python3-venv`**(ensurepip 被拆出),`pip install librelane` 前先 `apt-get install python3-venv`。
 4. **iverilog 不吃 UTF-8 BOM**——PowerShell 5.1 的 `Out-File -Encoding utf8` 會寫 BOM,生成側一律用 `[System.IO.File]::WriteAllText`(無 BOM)。
+5. **容器版 iverilog(s20250103 開發快照)對 `$dumpvars` 內前向引用的識別符會誤報 `Unable to bind wire/reg`**——症狀是所有題目(含官方黃金解)系統性拿 `p`,首輪評測因此得到假的 0%。診斷方法:把官方參考解餵進同一條管線當對照組;修補:`evaluate.py` 於編譯前剝除 `$dumpfile/$dumpvars` 行(僅關閉波形輸出,判分語義不變),修補後黃金對照 20/20 全過(`results/control_golden.json`)。教訓:**任何評測管線上線前,先讓已知正確的答案跑一遍。**
 
 ## Baseline 方法論
 
@@ -58,6 +59,21 @@ ollama pull qwen2.5-coder:7b
 - Prompt:官方 sv-generate 的 system 訊息與 `[BEGIN]/[DONE]` 指示,0-shot
 - 取樣:**每題 1 個樣本、temperature 0**(單樣本 pass@1)。註:官方標準為 n=20、temp 0.8 的 pass@k 估計——本倉庫初期以確定性單樣本換取快速迭代,數字不可與官方報表直接對比,後續會補標準取樣
 - 判定:iverilog `-g2012` 編譯(生成碼+官方測試台+官方參考)→ 30s 逾時執行 → 官方 sv-iv-analyze 的字串規則分類(見 `harness/evaluate.py` 檔頭)
+
+## 首批 Baseline 結果(2026-08-21,前 20 題子集)
+
+| 組別 | pass@1 | 失敗碼 | 解讀 |
+|---|---|---|---|
+| 黃金對照(官方參考解) | 20/20 | `....................` | harness 有效性驗證 |
+| qwen2.5-coder:3b,0-shot | 8/20 (40%) | `wwnS.S..C..R..CRwSS.` | 失敗主力是**宣告/語法類**(w/S/C) |
+| qwen2.5-coder:7b,0-shot | 6/10 (60%) | `....SS.S.S` | 失敗全為語法類 |
+| qwen2.5-coder:3b,**1-shot** | **15/20 (75%)** | `...R.R.....R...C..R.` | **ICL 幾乎消滅宣告/語法錯**,殘餘失敗為行為不符(R) |
+
+初步觀察(單樣本 temp 0,樣本數小,僅供方向判讀):
+
+1. 官方 1-shot 範例前綴讓 3B 從 40% 跳到 75%——小模型的主要死因(介面宣告慣例)是**格式知識問題**,一個範例就能大幅治癒;此結果與 VerilogEval v2 論文「ICL 對小模型增益最大」的結論一致。
+2. ICL 之後殘存的失敗集中在 **R(行為不符)**——這正是需要「模擬回饋閉環修復」才能解的錯誤類別,亦即本專案 agent 主線要攻的靶。
+3. 對照文獻:RTL-Coder 6.7B 在 spec-to-rtl 為 34%、GPT-4o 約 63%(官方 n=20 取樣,不能直接對比,僅作量級參照)。
 
 ## 授權
 

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-21T13:16:51.306534+00:00",
+  "generated_at": "2026-08-21T13:20:32.516655+00:00",
   "task": "spec-to-rtl",
   "n_problems": 20,
-  "n_pass": 0,
-  "pass_at_1": 0.0,
-  "code_string": "wwnSpSppppppppppwSSp",
+  "n_pass": 8,
+  "pass_at_1": 0.4,
+  "code_string": "wwnS.S..C..R..CRwSS.",
   "per_problem": {
     "Prob001_zero": {
       "code": "w",
@@ -23,52 +23,52 @@
       "mismatches": null
     },
     "Prob005_notgate": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob006_vectorr": {
       "code": "S",
       "mismatches": null
     },
     "Prob007_wire": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob008_m2014_q4h": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob009_popcount3": {
-      "code": "p",
+      "code": "C",
       "mismatches": null
     },
     "Prob010_mt2015_q4a": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob011_norgate": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob012_xnorgate": {
-      "code": "p",
-      "mismatches": null
+      "code": "R",
+      "mismatches": 219
     },
     "Prob013_m2014_q4e": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob014_andgate": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob015_vector1": {
-      "code": "p",
+      "code": "C",
       "mismatches": null
     },
     "Prob016_m2014_q4j": {
-      "code": "p",
-      "mismatches": null
+      "code": "R",
+      "mismatches": 99
     },
     "Prob017_mux2to1v": {
       "code": "w",
@@ -83,8 +83,8 @@
       "mismatches": null
     },
     "Prob020_mt2015_eq2": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     }
   },
   "generation": {

@@ -1,26 +1,26 @@
 {
-  "generated_at": "2026-08-21T13:17:04.825329+00:00",
+  "generated_at": "2026-08-21T13:20:32.659163+00:00",
   "task": "spec-to-rtl",
   "n_problems": 10,
-  "n_pass": 0,
-  "pass_at_1": 0.0,
-  "code_string": "ppppSSpSpS",
+  "n_pass": 6,
+  "pass_at_1": 0.6,
+  "code_string": "....SS.S.S",
   "per_problem": {
     "Prob001_zero": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob002_m2014_q4i": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob003_step_one": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob004_vector2": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob005_notgate": {
       "code": "S",
@@ -31,16 +31,16 @@
       "mismatches": null
     },
     "Prob007_wire": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob008_m2014_q4h": {
       "code": "S",
       "mismatches": null
     },
     "Prob009_popcount3": {
-      "code": "p",
-      "mismatches": null
+      "code": ".",
+      "mismatches": 0
     },
     "Prob010_mt2015_q4a": {
       "code": "S",

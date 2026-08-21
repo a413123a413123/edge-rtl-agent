@@ -75,11 +75,21 @@ def classify(log_text):
 def run_one(sample_sv, test_sv, ref_sv):
     """編譯+執行一題,回傳合併 log(編譯與模擬輸出都進分類器)。"""
     with tempfile.TemporaryDirectory() as tmp:
+        # 工具鏈修補(2026-08-21 診斷):容器版 iverilog s20250103 對 $dumpvars 中
+        # 前向引用的識別符誤報「Unable to bind wire/reg」,導致所有題目(含官方
+        # 黃金解)系統性失敗。剝除 $dumpfile/$dumpvars 行僅關閉波形輸出,不影響
+        # 判分語義;修補後黃金解對照 20/20 全過(見 results/control_golden.json)。
+        patched_test = os.path.join(tmp, "test_patched.sv")
+        with open(test_sv) as f:
+            kept = [l for l in f if "$dumpfile" not in l and "$dumpvars" not in l]
+        with open(patched_test, "w") as f:
+            f.writelines(kept)
+
         binary = os.path.join(tmp, "tb_bin")
         compile_cmd = [
             "iverilog", "-Wall", "-Winfloop", "-Wno-timescale",
             "-g2012", "-s", "tb", "-o", binary,
-            sample_sv, test_sv, ref_sv,
+            sample_sv, patched_test, ref_sv,
         ]
         proc = subprocess.run(compile_cmd, capture_output=True, text=True)
         log = proc.stdout + proc.stderr

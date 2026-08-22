@@ -1,0 +1,147 @@
+{
+  "n_problems": 26,
+  "threshold_pp": 5.0,
+  "arms": [
+    {
+      "label": "qwen2.5-coder:3b-instruct-fp16",
+      "path": "results/pilot_3b_fp16.json",
+      "pass_at_1": 0.2692,
+      "ci95": [
+        0.1308,
+        0.4231
+      ],
+      "n_solved_any": 11
+    },
+    {
+      "label": "qwen2.5-coder:3b-instruct-q8_0",
+      "path": "results/pilot_3b_q8.json",
+      "pass_at_1": 0.3154,
+      "ci95": [
+        0.1769,
+        0.4615
+      ],
+      "n_solved_any": 14
+    },
+    {
+      "label": "qwen2.5-coder:3b",
+      "path": "results/pilot_3b_q4.json",
+      "pass_at_1": 0.2769,
+      "ci95": [
+        0.1308,
+        0.4385
+      ],
+      "n_solved_any": 9
+    },
+    {
+      "label": "qwen2.5-coder:3b-instruct-q3_K_M",
+      "path": "results/pilot_3b_q3.json",
+      "pass_at_1": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "n_solved_any": 0
+    },
+    {
+      "label": "qwen2.5-coder:3b-instruct-q2_K",
+      "path": "results/pilot_3b_q2.json",
+      "pass_at_1": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "n_solved_any": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "baseline": "qwen2.5-coder:3b-instruct-fp16",
+      "compare": "qwen2.5-coder:3b-instruct-q8_0",
+      "diff_pp": -4.62,
+      "diff_ci95_pp": [
+        -7.69,
+        -1.54
+      ],
+      "p_value": 0.0301,
+      "solved_set_jaccard": 0.7857,
+      "solved_only_by_baseline": [],
+      "solved_only_by_compare": [
+        "Prob036_ringer",
+        "Prob063_review2015_shiftcount",
+        "Prob071_always_casez"
+      ]
+    },
+    {
+      "baseline": "qwen2.5-coder:3b-instruct-fp16",
+      "compare": "qwen2.5-coder:3b",
+      "diff_pp": -0.77,
+      "diff_ci95_pp": [
+        -6.15,
+        3.85
+      ],
+      "p_value": 0.9518,
+      "solved_set_jaccard": 0.6667,
+      "solved_only_by_baseline": [
+        "Prob009_popcount3",
+        "Prob029_m2014_q4g",
+        "Prob109_fsm1"
+      ],
+      "solved_only_by_compare": [
+        "Prob063_review2015_shiftcount"
+      ]
+    },
+    {
+      "baseline": "qwen2.5-coder:3b-instruct-fp16",
+      "compare": "qwen2.5-coder:3b-instruct-q3_K_M",
+      "diff_pp": 26.92,
+      "diff_ci95_pp": [
+        13.08,
+        42.31
+      ],
+      "p_value": 0.0014,
+      "solved_set_jaccard": 0.0,
+      "solved_only_by_baseline": [
+        "Prob002_m2014_q4i",
+        "Prob007_wire",
+        "Prob008_m2014_q4h",
+        "Prob009_popcount3",
+        "Prob024_hadd",
+        "Prob027_fadd",
+        "Prob029_m2014_q4g",
+        "Prob051_gates4",
+        "Prob058_alwaysblock2",
+        "Prob072_thermostat",
+        "Prob109_fsm1"
+      ],
+      "solved_only_by_compare": []
+    },
+    {
+      "baseline": "qwen2.5-coder:3b-instruct-fp16",
+      "compare": "qwen2.5-coder:3b-instruct-q2_K",
+      "diff_pp": 26.92,
+      "diff_ci95_pp": [
+        13.08,
+        42.31
+      ],
+      "p_value": 0.0014,
+      "solved_set_jaccard": 0.0,
+      "solved_only_by_baseline": [
+        "Prob002_m2014_q4i",
+        "Prob007_wire",
+        "Prob008_m2014_q4h",
+        "Prob009_popcount3",
+        "Prob024_hadd",
+        "Prob027_fadd",
+        "Prob029_m2014_q4g",
+        "Prob051_gates4",
+        "Prob058_alwaysblock2",
+        "Prob072_thermostat",
+        "Prob109_fsm1"
+      ],
+      "solved_only_by_compare": []
+    }
+  ],
+  "verdict": "MAIN_TRACK_A",
+  "verdict_reason": "qwen2.5-coder:3b-instruct-fp16 與 qwen2.5-coder:3b-instruct-q2_K 差距 26.92pp ≥ 5.0pp 門檻 → 量化損失存在,走主軸 A(量化邊界 × 閉環補償)",
+  "solved_set_shift_note": "解集 Jaccard 0.000:即使聚合分數接近,量化仍改變了哪些題會解——這是主軸 B 的核心量測(參 arXiv 2606.27205 JCR)"
+}

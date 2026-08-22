@@ -35,8 +35,8 @@ def main():
         if not metas:
             continue
         model = metas[0]["model"]
-        tot_s = sum(m["gen_seconds"] for m in metas)
-        tot_out = sum(m["out_tok"] for m in metas)
+        tot_s = sum((m["gen_seconds"] or 0) for m in metas)
+        tot_out = sum((m["out_tok"] or 0) for m in metas)
         tot_prompt = sum(m.get("prompt_tok") or 0 for m in metas)
         rows.append({
             "model": model,

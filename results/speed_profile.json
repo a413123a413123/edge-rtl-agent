@@ -9,7 +9,7 @@
       "mean_prompt_tok": 424.8,
       "gen_tok_per_s": 18.18,
       "samples_per_hour": 424.9,
-      "relative_speed": 1.0
+      "relative_speed": 0.295
     },
     {
       "model": "qwen2.5-coder:3b-instruct-q8_0",
@@ -20,18 +20,40 @@
       "mean_prompt_tok": 424.8,
       "gen_tok_per_s": 9.99,
       "samples_per_hour": 225.4,
-      "relative_speed": 0.55
+      "relative_speed": 0.162
     },
     {
       "model": "qwen2.5-coder:3b-instruct-fp16",
       "weights_gb": 6.2,
-      "n_samples": 3,
-      "mean_gen_seconds": 33.4,
-      "mean_out_tok": 38.0,
-      "mean_prompt_tok": 262.0,
-      "gen_tok_per_s": 1.14,
-      "samples_per_hour": 107.9,
-      "relative_speed": 0.063
+      "n_samples": 130,
+      "mean_gen_seconds": 28.2,
+      "mean_out_tok": 158.5,
+      "mean_prompt_tok": 424.8,
+      "gen_tok_per_s": 5.62,
+      "samples_per_hour": 127.6,
+      "relative_speed": 0.091
+    },
+    {
+      "model": "qwen2.5-coder:3b-instruct-q3_K_M",
+      "weights_gb": null,
+      "n_samples": 130,
+      "mean_gen_seconds": 8.1,
+      "mean_out_tok": 228.7,
+      "mean_prompt_tok": 424.8,
+      "gen_tok_per_s": 28.37,
+      "samples_per_hour": 446.7,
+      "relative_speed": 0.46
+    },
+    {
+      "model": "qwen2.5-coder:3b-instruct-q2_K",
+      "weights_gb": null,
+      "n_samples": 130,
+      "mean_gen_seconds": 14.9,
+      "mean_out_tok": 919.2,
+      "mean_prompt_tok": 419.5,
+      "gen_tok_per_s": 61.69,
+      "samples_per_hour": 241.6,
+      "relative_speed": 1.0
     }
   ],
   "note": "gen_tok_per_s 為含 prefill 的聚合吞吐"

@@ -87,10 +87,10 @@ def main():
                 "temperature": metas[0].get("temperature"),
                 "n_calls": len(metas),
                 "mean_gen_seconds": round(
-                    sum(m["gen_seconds"] for m in metas) / len(metas), 1
+                    sum((m["gen_seconds"] or 0) for m in metas) / len(metas), 1
                 ),
                 "mean_out_tok": round(
-                    sum(m["out_tok"] for m in metas) / len(metas), 1
+                    sum((m["out_tok"] or 0) for m in metas) / len(metas), 1
                 ),
                 "fallback_rate": round(
                     sum(1 for m in metas if m.get("fallback")) / len(metas), 4

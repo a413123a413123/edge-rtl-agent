@@ -1,0 +1,46 @@
+Question:
+
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk
+ - input  j
+ - input  k
+ - output Q
+
+The module should implement a JK flip-flop with the following truth
+table. Note: Qold is the output of the flip-flop before the positive
+clock edge.
+
+  J | K | Q
+  0 | 0 | Qold
+  0 | 1 | 0
+  1 | 0 | 1
+  1 | 1 | ~Qold
+
+
+
+Icarus Verilog reported the following problems with your previous attempt:
+TIMEOUT
+
+Your previous attempt (INCORRECT - do not repeat it verbatim):
+```
+module TopModule
+(
+  input  logic clk,
+  input  logic j,
+  input  logic k,
+  output logic Q
+);
+
+  // Combinational logic
+
+  assign Q = j ? ~Q : k ? 1'b1 : Q;
+
+endmodule
+```
+
+Rewrite the complete corrected module TopModule so it fixes these problems.
+Enclose your code with [BEGIN] and [DONE]. Only output the code snippet
+and do NOT output anything else.

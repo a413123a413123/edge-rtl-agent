@@ -1,0 +1,69 @@
+Question:
+
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk
+ - input  resetn
+ - input  byteena ( 2 bits)
+ - input  d       (16 bits)
+ - output q       (16 bits)
+
+The module should include 16 D flip-flops. It's sometimes useful to only
+modify parts of a group of flip-flops. The byte-enable inputs control
+whether each byte of the 16 registers should be written to on that cycle.
+byteena[1] controls the upper byte d[15:8], while byteena[0] controls the
+lower byte d[7:0]. resetn is a synchronous, active-low reset. All DFFs
+should be triggered by the positive edge of clk.
+
+
+
+Icarus Verilog reported the following problems with your previous attempt:
+sample.sv:31: error: Array q_reg needs an array index here.
+sample.sv:31: error: Unable to elaborate r-value: q_reg
+sample.sv:16: error: The expression '16'd0' cannot be implicitly cast to the target type.
+sample.sv:23: error: cannot perform a part select on array q_reg.
+sample.sv:26: error: cannot perform a part select on array q_reg.
+5 error(s) during elaboration.
+
+Your previous attempt (INCORRECT - do not repeat it verbatim):
+```
+module TopModule
+(
+  input  logic clk,
+  input  logic resetn,
+  input  logic [1:0] byteena,
+  input  logic [15:0] d,
+  output logic [15:0] q
+);
+
+  // D flip-flops
+  reg [15:0] q_reg [0:15];
+
+  // Reset logic
+  always_ff @(posedge clk or negedge resetn) begin
+    if (!resetn) begin
+      q_reg <= 16'b0;
+    end
+  end
+
+  // Write logic
+  always_ff @(posedge clk) begin
+    if (byteena[1]) begin
+      q_reg[15:8] <= d[15:8];
+    end
+    if (byteena[0]) begin
+      q_reg[7:0] <= d[7:0];
+    end
+  end
+
+  // Output
+  assign q = q_reg;
+
+endmodule
+```
+
+Rewrite the complete corrected module TopModule so it fixes these problems.
+Enclose your code with [BEGIN] and [DONE]. Only output the code snippet
+and do NOT output anything else.

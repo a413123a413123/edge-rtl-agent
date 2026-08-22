@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-08-22T12:14:45.095106+00:00",
+  "arms": {
+    "repair_3b_1shot_seq30": {
+      "mode": "full",
+      "model": "qwen2.5-coder:3b",
+      "shots": 1,
+      "seed": 42,
+      "n_problems": 30,
+      "attempt0_pass": 6,
+      "final_pass": 7,
+      "loop_net_gain": 1,
+      "fixed_at_attempt": {
+        "1": 1
+      },
+      "transitions": {
+        "C->C": 2,
+        "C->R": 1,
+        "R->.": 1,
+        "R->R": 7,
+        "T->R": 1,
+        "r->r": 12
+      },
+      "total_tokens": 39581,
+      "total_gen_seconds": 510.5,
+      "marker_fallback_count": 15
+    }
+  }
+}

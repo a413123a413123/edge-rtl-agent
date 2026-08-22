@@ -1,0 +1,45 @@
+Question:
+
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk
+ - input  reset
+ - input  d (8 bits)
+ - output q (8 bits)
+
+Implement a module that includes 8 D flip-flops with active high
+synchronous reset. The flip-flops must be reset to 0x34 rather than zero.
+All DFFs should be triggered by the negative edge of clk.
+
+
+
+Icarus Verilog reported the following problems with your previous attempt:
+Mismatches: 395 in 436 samples
+
+Your previous attempt (INCORRECT - do not repeat it verbatim):
+```
+module TopModule
+(
+  input  logic clk,
+  input  logic reset,
+  input  logic [7:0] d,
+  output logic [7:0] q
+);
+
+  // Instantiate 8 D flip-flops
+  always_ff @(posedge clk or posedge reset) begin
+    if (reset) begin
+      q <= 8'b110100; // Reset to 0x34
+    end else begin
+      q <= d;
+    end
+  end
+
+endmodule
+```
+
+Rewrite the complete corrected module TopModule so it fixes these problems.
+Enclose your code with [BEGIN] and [DONE]. Only output the code snippet
+and do NOT output anything else.

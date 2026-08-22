@@ -1,0 +1,52 @@
+Question:
+
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk
+ - input  reset
+ - input  in    (32 bits)
+ - output out   (32 bits)
+
+The module should examine each bit in the 32-bit input vector, and
+capture when the input signal changes from 1 in one clock cycle to 0 the
+next. "Capture" means that the output will remain 1 until the register is
+reset (active high synchronous reset). Assume all sequential logic is
+triggered on the positive edge of the clock.
+
+
+
+Icarus Verilog reported the following problems with your previous attempt:
+Mismatches: 239 in 266 samples
+
+Your previous attempt (INCORRECT - do not repeat it verbatim):
+```
+module TopModule
+(
+  input  logic clk,
+  input  logic reset,
+  input  logic [31:0] in,
+  output logic [31:0] out
+);
+
+  reg [31:0] prev_in;
+
+  always @(posedge clk or posedge reset) begin
+    if (reset) begin
+      prev_in <= 32'b0;
+      out <= 32'b0;
+    end else begin
+      out <= prev_in;
+      if (in != prev_in) begin
+        out <= in;
+      end
+    end
+  end
+
+endmodule
+```
+
+Rewrite the complete corrected module TopModule so it fixes these problems.
+Enclose your code with [BEGIN] and [DONE]. Only output the code snippet
+and do NOT output anything else.

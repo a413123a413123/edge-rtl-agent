@@ -1,0 +1,46 @@
+Question:
+
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk
+ - input  resetn
+ - input  in
+ - output out
+
+The module should implement a shift register with four D flops. Assume
+all sequential logic is triggered on the positive edge of the clock.
+Reset is active-low synchronous resettable.
+
+
+
+Icarus Verilog reported the following problems with your previous attempt:
+Mismatches: 131 in 299 samples
+
+Your previous attempt (INCORRECT - do not repeat it verbatim):
+```
+module TopModule
+(
+  input  logic clk,
+  input  logic resetn,
+  input  logic in,
+  output logic out
+);
+
+  // Sequential logic
+
+  always_ff @(posedge clk or negedge resetn) begin
+    if (!resetn) begin
+      out <= 1'b0;
+    end else begin
+      out <= in;
+    end
+  end
+
+endmodule
+```
+
+Rewrite the complete corrected module TopModule so it fixes these problems.
+Enclose your code with [BEGIN] and [DONE]. Only output the code snippet
+and do NOT output anything else.

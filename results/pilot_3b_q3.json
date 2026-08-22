@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-08-22T12:14:35.467288+00:00",
+  "task": "spec-to-rtl",
+  "n_problems": 26,
+  "n_samples_per_problem": [
+    5
+  ],
+  "pass_at_1": 0.0,
+  "per_problem": {
+    "Prob002_m2014_q4i": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob007_wire": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob008_m2014_q4h": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob009_popcount3": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob023_vector100r": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob024_hadd": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob027_fadd": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob029_m2014_q4g": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob036_ringer": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob041_dff8r": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob051_gates4": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob056_ece241_2013_q7": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob057_kmap2": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob058_alwaysblock2": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob060_m2014_q4k": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob063_review2015_shiftcount": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob071_always_casez": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob072_thermostat": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob088_ece241_2014_q5b": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob108_rule90": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob109_fsm1": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob115_shift18": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob130_circuit5": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob140_fsm_hdlc": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob147_circuit10": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob155_lemmings4": {
+      "codes": "SSSSS",
+      "n": 5,
+      "c": 0
+    }
+  },
+  "pass_at_5": 0.0,
+  "generation": {
+    "model": "qwen2.5-coder:3b-instruct-q3_K_M",
+    "shots": 1,
+    "temperature": 0.8,
+    "n_calls": 130,
+    "mean_gen_seconds": 8.1,
+    "mean_out_tok": 228.7,
+    "fallback_rate": 0.6308
+  }
+}

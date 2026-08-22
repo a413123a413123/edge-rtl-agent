@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-08-22T11:50:54.199384+00:00",
+  "task": "spec-to-rtl",
+  "n_problems": 26,
+  "n_samples_per_problem": [
+    5
+  ],
+  "pass_at_1": 0.2692,
+  "per_problem": {
+    "Prob002_m2014_q4i": {
+      "codes": "c....",
+      "n": 5,
+      "c": 4
+    },
+    "Prob007_wire": {
+      "codes": ".....",
+      "n": 5,
+      "c": 5
+    },
+    "Prob008_m2014_q4h": {
+      "codes": ".....",
+      "n": 5,
+      "c": 5
+    },
+    "Prob009_popcount3": {
+      "codes": "RCR.R",
+      "n": 5,
+      "c": 1
+    },
+    "Prob023_vector100r": {
+      "codes": "RRRRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob024_hadd": {
+      "codes": ".S...",
+      "n": 5,
+      "c": 4
+    },
+    "Prob027_fadd": {
+      "codes": "..SCR",
+      "n": 5,
+      "c": 2
+    },
+    "Prob029_m2014_q4g": {
+      "codes": "R.RRR",
+      "n": 5,
+      "c": 1
+    },
+    "Prob036_ringer": {
+      "codes": "RRRRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob041_dff8r": {
+      "codes": "RRRCC",
+      "n": 5,
+      "c": 0
+    },
+    "Prob051_gates4": {
+      "codes": ".....",
+      "n": 5,
+      "c": 5
+    },
+    "Prob056_ece241_2013_q7": {
+      "codes": "RRRRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob057_kmap2": {
+      "codes": "RRRRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob058_alwaysblock2": {
+      "codes": ".....",
+      "n": 5,
+      "c": 5
+    },
+    "Prob060_m2014_q4k": {
+      "codes": "RRRRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob063_review2015_shiftcount": {
+      "codes": "RRSRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob071_always_casez": {
+      "codes": "RCRRS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob072_thermostat": {
+      "codes": ".RR.R",
+      "n": 5,
+      "c": 2
+    },
+    "Prob088_ece241_2014_q5b": {
+      "codes": "RRRRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob108_rule90": {
+      "codes": "CRSRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob109_fsm1": {
+      "codes": "RRRR.",
+      "n": 5,
+      "c": 1
+    },
+    "Prob115_shift18": {
+      "codes": "SCRSR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob130_circuit5": {
+      "codes": "RRRRR",
+      "n": 5,
+      "c": 0
+    },
+    "Prob140_fsm_hdlc": {
+      "codes": "SRRRp",
+      "n": 5,
+      "c": 0
+    },
+    "Prob147_circuit10": {
+      "codes": "RRSRS",
+      "n": 5,
+      "c": 0
+    },
+    "Prob155_lemmings4": {
+      "codes": "pRSpe",
+      "n": 5,
+      "c": 0
+    }
+  },
+  "pass_at_5": 0.4231,
+  "generation": {
+    "model": "qwen2.5-coder:3b-instruct-fp16",
+    "shots": 1,
+    "temperature": 0.8,
+    "n_calls": 130,
+    "mean_gen_seconds": 28.2,
+    "mean_out_tok": 158.5,
+    "fallback_rate": 0.0
+  }
+}

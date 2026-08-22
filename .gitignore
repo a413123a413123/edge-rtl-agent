@@ -13,3 +13,7 @@ __pycache__/
 # 雜項
 .DS_Store
 Thumbs.db
+
+# 容器內模擬器 crash 產物(root 權限,會卡 git index)
+core
+core.*

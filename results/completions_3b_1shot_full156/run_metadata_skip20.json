@@ -1,0 +1,154 @@
+{
+    "model":  "qwen2.5-coder:3b",
+    "task":  "spec-to-rtl",
+    "shots":  1,
+    "temperature":  0,
+    "top_p":  0.95,
+    "max_tokens":  1024,
+    "num_ctx":  8192,
+    "seed":  42,
+    "n_samples":  1,
+    "note":  "single-sample pass@1 (temp 0); official uses n=20 samples at temp 0.8 for pass@k",
+    "problems":  [
+                     {
+                         "problem":  "Prob021_mux256to1v",
+                         "gen_seconds":  18.3,
+                         "prompt_eval_count":  360,
+                         "eval_count":  71,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob022_mux2to1",
+                         "gen_seconds":  18,
+                         "prompt_eval_count":  299,
+                         "eval_count":  56,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob023_vector100r",
+                         "gen_seconds":  18.6,
+                         "prompt_eval_count":  283,
+                         "eval_count":  57,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob024_hadd",
+                         "gen_seconds":  19.1,
+                         "prompt_eval_count":  294,
+                         "eval_count":  61,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob025_reduction",
+                         "gen_seconds":  1.7,
+                         "prompt_eval_count":  335,
+                         "eval_count":  82,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob026_alwaysblock1",
+                         "gen_seconds":  18.6,
+                         "prompt_eval_count":  288,
+                         "eval_count":  82,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob027_fadd",
+                         "gen_seconds":  18.9,
+                         "prompt_eval_count":  300,
+                         "eval_count":  82,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob028_m2014_q4a",
+                         "gen_seconds":  18.2,
+                         "prompt_eval_count":  274,
+                         "eval_count":  52,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob029_m2014_q4g",
+                         "gen_seconds":  25.3,
+                         "prompt_eval_count":  333,
+                         "eval_count":  64,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob030_popcount255",
+                         "gen_seconds":  26.5,
+                         "prompt_eval_count":  303,
+                         "eval_count":  55,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob031_dff",
+                         "gen_seconds":  30.2,
+                         "prompt_eval_count":  284,
+                         "eval_count":  55,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob032_vector0",
+                         "gen_seconds":  29.5,
+                         "prompt_eval_count":  330,
+                         "eval_count":  95,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob033_ece241_2014_q1c",
+                         "gen_seconds":  19.9,
+                         "prompt_eval_count":  327,
+                         "eval_count":  93,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob034_dff8",
+                         "gen_seconds":  24.2,
+                         "prompt_eval_count":  294,
+                         "eval_count":  160,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob035_count1to10",
+                         "gen_seconds":  26.2,
+                         "prompt_eval_count":  314,
+                         "eval_count":  98,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob036_ringer",
+                         "gen_seconds":  25.6,
+                         "prompt_eval_count":  364,
+                         "eval_count":  68,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob037_review2015_count1k",
+                         "gen_seconds":  21.9,
+                         "prompt_eval_count":  328,
+                         "eval_count":  101,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob038_count15",
+                         "gen_seconds":  21.2,
+                         "prompt_eval_count":  327,
+                         "eval_count":  91,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob039_always_if",
+                         "gen_seconds":  28,
+                         "prompt_eval_count":  337,
+                         "eval_count":  117,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob040_count10",
+                         "gen_seconds":  19.9,
+                         "prompt_eval_count":  323,
+                         "eval_count":  100,
+                         "marker_fallback":  false
+                     }
+                 ]
+}

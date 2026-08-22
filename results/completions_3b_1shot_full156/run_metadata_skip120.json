@@ -1,0 +1,154 @@
+{
+    "model":  "qwen2.5-coder:3b",
+    "task":  "spec-to-rtl",
+    "shots":  1,
+    "temperature":  0,
+    "top_p":  0.95,
+    "max_tokens":  1024,
+    "num_ctx":  8192,
+    "seed":  42,
+    "n_samples":  1,
+    "note":  "single-sample pass@1 (temp 0); official uses n=20 samples at temp 0.8 for pass@k",
+    "problems":  [
+                     {
+                         "problem":  "Prob121_2014_q3bfsm",
+                         "gen_seconds":  8.4,
+                         "prompt_eval_count":  446,
+                         "eval_count":  362,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob122_kmap4",
+                         "gen_seconds":  1.5,
+                         "prompt_eval_count":  372,
+                         "eval_count":  72,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob123_bugs_addsubz",
+                         "gen_seconds":  1.9,
+                         "prompt_eval_count":  364,
+                         "eval_count":  105,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob124_rule110",
+                         "gen_seconds":  2.9,
+                         "prompt_eval_count":  606,
+                         "eval_count":  157,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob125_kmap3",
+                         "gen_seconds":  1.9,
+                         "prompt_eval_count":  387,
+                         "eval_count":  95,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob126_circuit6",
+                         "gen_seconds":  1.5,
+                         "prompt_eval_count":  553,
+                         "eval_count":  80,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob127_lemmings1",
+                         "gen_seconds":  4.3,
+                         "prompt_eval_count":  507,
+                         "eval_count":  245,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob128_fsm_ps2",
+                         "gen_seconds":  6.7,
+                         "prompt_eval_count":  464,
+                         "eval_count":  399,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob129_ece241_2013_q8",
+                         "gen_seconds":  5.6,
+                         "prompt_eval_count":  373,
+                         "eval_count":  331,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob130_circuit5",
+                         "gen_seconds":  2.1,
+                         "prompt_eval_count":  684,
+                         "eval_count":  102,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob131_mt2015_q4",
+                         "gen_seconds":  4.9,
+                         "prompt_eval_count":  675,
+                         "eval_count":  287,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob132_always_if2",
+                         "gen_seconds":  2.4,
+                         "prompt_eval_count":  348,
+                         "eval_count":  127,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob133_2014_q3fsm",
+                         "gen_seconds":  4.3,
+                         "prompt_eval_count":  459,
+                         "eval_count":  245,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob134_2014_q3c",
+                         "gen_seconds":  4.2,
+                         "prompt_eval_count":  448,
+                         "eval_count":  251,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob135_m2014_q6b",
+                         "gen_seconds":  2.7,
+                         "prompt_eval_count":  458,
+                         "eval_count":  152,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob136_m2014_q6",
+                         "gen_seconds":  16.7,
+                         "prompt_eval_count":  411,
+                         "eval_count":  1024,
+                         "marker_fallback":  true
+                     },
+                     {
+                         "problem":  "Prob137_fsm_serial",
+                         "gen_seconds":  5.9,
+                         "prompt_eval_count":  463,
+                         "eval_count":  350,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob138_2012_q2fsm",
+                         "gen_seconds":  5.3,
+                         "prompt_eval_count":  475,
+                         "eval_count":  319,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob139_2013_q2bfsm",
+                         "gen_seconds":  9.6,
+                         "prompt_eval_count":  554,
+                         "eval_count":  580,
+                         "marker_fallback":  false
+                     },
+                     {
+                         "problem":  "Prob140_fsm_hdlc",
+                         "gen_seconds":  6.3,
+                         "prompt_eval_count":  552,
+                         "eval_count":  368,
+                         "marker_fallback":  false
+                     }
+                 ]
+}

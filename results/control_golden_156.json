@@ -1,0 +1,636 @@
+{
+  "generated_at": "2026-08-21T16:38:20.624186+00:00",
+  "task": "spec-to-rtl",
+  "n_problems": 156,
+  "n_pass": 152,
+  "n_skipped_missing": 0,
+  "skipped": [],
+  "pass_at_1": 0.9744,
+  "code_string": ".................................................................................T................C.........................................T..............T",
+  "per_problem": {
+    "Prob001_zero": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob002_m2014_q4i": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob003_step_one": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob004_vector2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob005_notgate": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob006_vectorr": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob007_wire": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob008_m2014_q4h": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob009_popcount3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob010_mt2015_q4a": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob011_norgate": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob012_xnorgate": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob013_m2014_q4e": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob014_andgate": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob015_vector1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob016_m2014_q4j": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob017_mux2to1v": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob018_mux256to1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob019_m2014_q4f": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob020_mt2015_eq2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob021_mux256to1v": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob022_mux2to1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob023_vector100r": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob024_hadd": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob025_reduction": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob026_alwaysblock1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob027_fadd": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob028_m2014_q4a": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob029_m2014_q4g": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob030_popcount255": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob031_dff": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob032_vector0": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob033_ece241_2014_q1c": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob034_dff8": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob035_count1to10": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob036_ringer": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob037_review2015_count1k": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob038_count15": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob039_always_if": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob040_count10": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob041_dff8r": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob042_vector4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob043_vector5": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob044_vectorgates": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob045_edgedetect2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob046_dff8p": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob047_dff8ar": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob048_m2014_q4c": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob049_m2014_q4b": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob050_kmap1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob051_gates4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob052_gates100": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob053_m2014_q4d": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob054_edgedetect": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob055_conditional": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob056_ece241_2013_q7": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob057_kmap2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob058_alwaysblock2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob059_wire4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob060_m2014_q4k": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob061_2014_q4a": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob062_bugs_mux2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob063_review2015_shiftcount": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob064_vector3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob065_7420": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob066_edgecapture": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob067_countslow": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob068_countbcd": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob069_truthtable1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob070_ece241_2013_q2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob071_always_casez": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob072_thermostat": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob073_dff16e": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob074_ece241_2014_q4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob075_counter_2bc": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob076_always_case": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob077_wire_decl": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob078_dualedge": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob079_fsm3onehot": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob080_timer": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob081_7458": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob082_lfsr32": {
+      "code": "T",
+      "mismatches": 0
+    },
+    "Prob083_mt2015_q4b": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob084_ece241_2013_q12": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob085_shift4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob086_lfsr5": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob087_gates": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob088_ece241_2014_q5b": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob089_ece241_2014_q5a": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob090_circuit1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob091_2012_q2b": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob092_gatesv100": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob093_ece241_2014_q3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob094_gatesv": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob095_review2015_fsmshift": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob096_review2015_fsmseq": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob097_mux9to1v": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob098_circuit7": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob099_m2014_q6c": {
+      "code": "C",
+      "mismatches": null
+    },
+    "Prob100_fsm3comb": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob101_circuit4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob102_circuit3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob103_circuit2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob104_mt2015_muxdff": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob105_rotate100": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob106_always_nolatches": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob107_fsm1s": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob108_rule90": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob109_fsm1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob110_fsm2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob111_fsm2s": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob112_always_case2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob113_2012_q1g": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob114_bugs_case": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob115_shift18": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob116_m2014_q3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob117_circuit9": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob118_history_shift": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob119_fsm3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob120_fsm3s": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob121_2014_q3bfsm": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob122_kmap4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob123_bugs_addsubz": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob124_rule110": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob125_kmap3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob126_circuit6": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob127_lemmings1": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob128_fsm_ps2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob129_ece241_2013_q8": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob130_circuit5": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob131_mt2015_q4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob132_always_if2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob133_2014_q3fsm": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob134_2014_q3c": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob135_m2014_q6b": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob136_m2014_q6": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob137_fsm_serial": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob138_2012_q2fsm": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob139_2013_q2bfsm": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob140_fsm_hdlc": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob141_count_clock": {
+      "code": "T",
+      "mismatches": 0
+    },
+    "Prob142_lemmings2": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob143_fsm_onehot": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob144_conwaylife": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob145_circuit8": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob146_fsm_serialdata": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob147_circuit10": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob148_2013_q2afsm": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob149_ece241_2013_q4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob150_review2015_fsmonehot": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob151_review2015_fsm": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob152_lemmings3": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob153_gshare": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob154_fsm_ps2data": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob155_lemmings4": {
+      "code": ".",
+      "mismatches": 0
+    },
+    "Prob156_review2015_fancytimer": {
+      "code": "T",
+      "mismatches": 0
+    }
+  }
+}

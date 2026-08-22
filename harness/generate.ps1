@@ -148,5 +148,6 @@ $runInfo = [ordered]@{
     note        = "single-sample pass@1 (temp 0); official uses n=20 samples at temp 0.8 for pass@k"
     problems    = $runMeta
 }
-[System.IO.File]::WriteAllText("$outDir\run_metadata.json", ($runInfo | ConvertTo-Json -Depth 5))
+# 按批次命名 metadata,避免多批次寫同一 Tag 目錄時互相覆寫(provenance 保全)
+[System.IO.File]::WriteAllText("$outDir\run_metadata_skip$SkipProblems.json", ($runInfo | ConvertTo-Json -Depth 5))
 Write-Host "完成:$outDir"

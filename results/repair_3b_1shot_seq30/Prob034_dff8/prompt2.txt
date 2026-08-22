@@ -1,0 +1,50 @@
+Question:
+
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk
+ - input  d   (8 bits)
+ - output q   (8 bits)
+
+The module should include 8 D flip-flops. All DFFs should be triggered by
+the positive edge of clock.
+
+
+
+Icarus Verilog reported the following problems with your previous attempt:
+Mismatches: 39 in 41 samples
+
+Your previous attempt (INCORRECT - do not repeat it verbatim):
+```
+module TopModule
+(
+  input  logic clk,
+  input  logic [7:0] d,
+  output logic [7:0] q
+);
+
+  // D flip-flops
+  reg [7:0] q0, q1, q2, q3, q4, q5, q6, q7;
+
+  // DFFs
+  always @(posedge clk) begin
+    q0 <= d;
+    q1 <= q0;
+    q2 <= q1;
+    q3 <= q2;
+    q4 <= q3;
+    q5 <= q4;
+    q6 <= q5;
+    q7 <= q6;
+  end
+
+  assign q = q7;
+
+endmodule
+```
+
+Rewrite the complete corrected module TopModule so it fixes these problems.
+Enclose your code with [BEGIN] and [DONE]. Only output the code snippet
+and do NOT output anything else.

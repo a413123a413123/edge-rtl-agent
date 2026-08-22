@@ -27,9 +27,12 @@ param(
     [string]$WslUser      = "a413123a413123",
     [string]$OllamaUrl    = "http://localhost:11434",
     [int]   $Seed         = 42,
+    [string]$ProblemListFile = "",
     [switch]$NoFeedback,
     [switch]$CodeOnly
 )
+# -ProblemListFile:題目清單檔(每行一個題名),用於非連續子集(如時序題分層);
+#   Skip/NumProblems 改作用於清單行。空字串=沿用按檔名排序的連續取題。
 # 三臂消融設計(稽核輪一 V3 critical 修正:兩臂各差一個變數,歸因才成立):
 #   full(預設)   :規格 + 舊碼 + 工具錯誤摘要
 #   -CodeOnly     :規格 + 舊碼(無錯誤摘要)——與 full 只差 log 一個變數
@@ -114,7 +117,12 @@ function Check-One([string]$probName) {
 New-Item -ItemType Directory -Force -Path $outWin | Out-Null
 $trajPath = "$outWin\trajectory.jsonl"
 
-$problems = Get-ChildItem $datasetWin -Filter *_prompt.txt | Sort-Object Name | Select-Object -Skip $SkipProblems -First $NumProblems
+if ($ProblemListFile -ne "") {
+    $names = Get-Content $ProblemListFile | Where-Object { $_.Trim() -ne "" } | Select-Object -Skip $SkipProblems -First $NumProblems
+    $problems = $names | ForEach-Object { Get-Item "$datasetWin\$($_.Trim())_prompt.txt" }
+} else {
+    $problems = Get-ChildItem $datasetWin -Filter *_prompt.txt | Sort-Object Name | Select-Object -Skip $SkipProblems -First $NumProblems
+}
 Write-Host ("修復迴圈:{0} | 題 {1}(skip {2})| {3}-shot | 最多修 {4} 輪" -f $Model, $problems.Count, $SkipProblems, $Shots, $MaxRepairs)
 
 $idx = 0

@@ -1,0 +1,23 @@
+module TopModule
+(
+  input  logic clk,
+  input  logic reset,
+  output logic [3:0] q
+);
+
+  reg [3:0] count;
+
+  always @(posedge clk or posedge reset) begin
+    if (reset) begin
+      count <= 4'b0001; // Start at 1
+    end else begin
+      count <= count + 1;
+      if (count == 4'b1000) begin
+        count <= 4'b0001; // Wrap around to 1
+      end
+    end
+  end
+
+  assign q = count;
+
+endmodule

@@ -1,0 +1,33 @@
+{
+  "created": "2026-08-22",
+  "reason_summary": "全 156 題黃金對照(官方參考解跑官方判定協定)發現 4 題連黃金解都無法通過,無法區分模型失敗與題目缺陷,故從一切評分分母中除外。證據:results/control_golden_156.json 與本檔各題 evidence。",
+  "harness_context": "iverilog s20250103(LibreLane 3.0.10 容器),官方 iverilog 旗標與 30s 逾時,dumpvars 剝除修補(僅波形輸出,黃金對照 152/156 支撐語義保全)。",
+  "exclusions": [
+    {
+      "problem": "Prob082_lfsr32",
+      "code": "T",
+      "category": "watchdog_structural",
+      "evidence": "手動重跑黃金解:模擬 0.9s 完成,輸出『Simulation finished at 1000000 ps』與『Mismatches: 0 in 200000 samples』——刺激序列以構造達到 1e6 ps,測試台看門狗(#1000000 $display TIMEOUT)必然觸發;官方 sv-iv-analyze 對 TIMEOUT 行立即判 T 並 break(與機器速度無關,黃金解在官方協定下永遠判 T)。"
+    },
+    {
+      "problem": "Prob141_count_clock",
+      "code": "T",
+      "category": "watchdog_structural",
+      "evidence": "同 Prob082:黃金解 1.3s 跑完、Mismatches: 0 in 200000 samples、Simulation finished at 1000000 ps;看門狗於模擬時間必然觸發。"
+    },
+    {
+      "problem": "Prob156_review2015_fancytimer",
+      "code": "T",
+      "category": "watchdog_structural",
+      "evidence": "同 Prob082:黃金解 0.9s 跑完、Mismatches: 0 in 200000 samples;看門狗必然觸發。"
+    },
+    {
+      "problem": "Prob099_m2014_q6c",
+      "code": "C",
+      "category": "port_mismatch_upstream",
+      "evidence": "官方 RefModule 埠為 (y, w, Y1, Y3);官方 test.sv L69-79 對 ref 實例(good1)與 DUT 實例(top_module1)均連接 .Y2/.Y4——黃金解自身編譯失敗:『port Y2 is not a port of good1』。任何符合 ref 介面的正確實作皆無法通過此題。"
+    }
+  ],
+  "effective_scoreable_set": 152,
+  "planned_action": "整理為 NVlabs/verilog-eval upstream issue(公開發布前先取得使用者同意)"
+}

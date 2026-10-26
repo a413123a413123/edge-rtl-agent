@@ -7,10 +7,11 @@ remains under its own license.
 ## VerilogEval v2 (NVlabs/verilog-eval)
 
 - Source: https://github.com/NVlabs/verilog-eval
-- What is included here: problem identifiers, specifications, testbenches
-  and reference solutions from the VerilogEval v2 `spec-to-rtl` task, used
-  unmodified for evaluation. They appear under `results/` (for example
-  `results/completions_golden156/`) and are read by the scripts in `harness/`.
+- What is included here: the official reference solutions of the VerilogEval v2
+  `spec-to-rtl` task, copied unmodified as `results/completions_golden156/<problem>/sample01.sv`
+  and used as a golden control for the evaluation harness. Folder names under
+  `results/` reuse the VerilogEval problem identifiers. Problem specifications
+  and testbenches are not included in this repository.
 - License: MIT License, reproduced below.
 
 ```
